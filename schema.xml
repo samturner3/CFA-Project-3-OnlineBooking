@@ -1,0 +1,31 @@
+var Court = mongoose.model('Court', {
+    court_number: Number,
+    type: String,
+    location: String,
+    occupancy: Number,
+    cost_per_hour_offpeak: Number,
+    cost_per_hour_peak: Number,
+    cost_per_extra_person_member: Number,
+    cost_per_extra_person_guest: Number,
+    reserved: [
+        {
+            from: String,
+            to: String
+        }
+    ],
+    client: [
+        {
+            name: String,
+            phone: String,
+            member: Boolean
+        }
+    ],
+    payment: [
+        {
+            amount: Number,
+            paid: Boolean,
+            payment_id: String
+        }
+    ]
+    
+});
